@@ -1,0 +1,5 @@
+# The theme is part of the helix runtime by default (based on master at least)
+theme = "catppuccin_mocha"
+
+[editor]
+mouse = false

@@ -1,0 +1,23 @@
+packages:
+  - name: alacritty
+    dest:
+      macos: ~/.config/alacritty
+    source: data/alacritty
+    copy:
+      - catppuccin.yml
+    template:
+      - alacritty.yml.erb
+  - name: helix
+    dest:
+      macos: ~/.config/helix
+    source: data/helix
+    copy:
+      - config.toml
+  - name: zellij
+    dest:
+      macos: ~/.config/zellij
+    source: data/zellij
+    copy:
+      - config.kdl
+      - layouts
+      - themes
