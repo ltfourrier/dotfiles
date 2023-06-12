@@ -13,6 +13,7 @@ packages:
     source: data/helix
     copy:
       - config.toml
+      - languages.toml
   - name: zellij
     dest:
       macos: ~/.config/zellij
