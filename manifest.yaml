@@ -4,7 +4,7 @@ packages:
       macos: ~/.config/alacritty
     source: data/alacritty
     copy:
-      - catppuccin.yml
+      - catppuccin.toml
     template:
       - alacritty.toml.erb
   - name: helix
