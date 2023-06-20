@@ -6,7 +6,7 @@ packages:
     copy:
       - catppuccin.yml
     template:
-      - alacritty.yml.erb
+      - alacritty.toml.erb
   - name: helix
     dest:
       macos: ~/.config/helix
