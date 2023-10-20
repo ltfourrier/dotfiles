@@ -12,4 +12,7 @@ layout {
 	tab name="Code"
 	tab name="Documentation"
 	tab name="Sidecar"
+	tab name="Sidecar #2"
+	tab name="Sidecar #3"
+	tab name="Sidecar #4"
 }
