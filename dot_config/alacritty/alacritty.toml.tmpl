@@ -1,0 +1,20 @@
+import = ["{{ .chezmoi.homeDir }}/.config/alacritty/catppuccin.toml"]
+
+# shell = "/usr/local/bin/zellij"
+working_directory = "{{ .chezmoi.homeDir }}"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 10.0
+
+[font.normal]
+family = "MesloLGS Nerd Font"
+
+[mouse]
+hide_when_typing = true
+
+[window]
+option_as_alt = "Both"
+startup_mode = "Fullscreen"
