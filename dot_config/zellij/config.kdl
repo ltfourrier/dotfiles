@@ -1,0 +1,36 @@
+keybinds {
+	normal {}
+	locked {
+		bind "Ctrl g" { SwitchToMode "Normal"; }
+		bind "Alt l" { GoToNextTab; }
+		bind "Alt h" { GoToPreviousTab; }
+	}
+	resize {}
+	pane {}
+	move {}
+	tab {}
+	scroll {}
+	search {}
+	entersearch {}
+	renametab {}
+	renamepane {}
+	session {}
+	tmux {}
+	shared_except "locked" {
+		bind "Ctrl g" { SwitchToMode "Locked"; }
+		bind "Ctrl q" { Quit; }
+	}
+}
+
+plugins {
+	tab-bar { path "tab-bar"; }
+	status-bar { path "status-bar"; }
+	strider { path "strider"; }
+	compact-bar { path "compact-bar"; }
+}
+
+on_force_close "quit"
+default_shell "/usr/local/bin/nu"
+theme "catppuccin-mocha"
+default_mode "locked"
+
