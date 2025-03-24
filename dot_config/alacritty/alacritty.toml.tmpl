@@ -1,7 +1,9 @@
+[general]
 import = ["{{ .chezmoi.homeDir }}/.config/alacritty/catppuccin.toml"]
-
-# shell = "/usr/local/bin/zellij"
 working_directory = "{{ .chezmoi.homeDir }}"
+
+[terminal]
+shell = "/usr/local/bin/nu"
 
 [env]
 TERM = "xterm-256color"
