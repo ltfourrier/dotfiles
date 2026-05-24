@@ -1,0 +1,14 @@
+# Theme
+theme = Catppuccin Mocha
+window-theme = dark
+
+# Performance
+background-opacity = 1
+background-blur = false
+window-vsync = true
+
+# ZelliJ by default!
+command = /usr/local/bin/zellij
+
+# Fix alt/option key
+macos-option-as-alt = left
