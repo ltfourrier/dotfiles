@@ -18,3 +18,12 @@
 # them for future reference.
 
 $env.EDITOR = 'hx'
+
+$env.PATH = ($env.PATH
+  | prepend "/usr/local/opt/ruby/bin"
+  | prepend "/usr/local/lib/ruby/gems/3.1.0/bin"
+  | prepend "/usr/local/bin"
+  | prepend "/usr/local/sbin"
+  | append "/Users/laurent.fourrier/.local/bin")
+
+source "~/.cargo/env.nu"

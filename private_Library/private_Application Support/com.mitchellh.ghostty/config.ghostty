@@ -1,6 +1,7 @@
 # Theme
 theme = Catppuccin Mocha
 window-theme = dark
+fullscreen = true
 
 # Performance
 background-opacity = 1

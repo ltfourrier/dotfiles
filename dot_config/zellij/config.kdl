@@ -1,14 +1,19 @@
-// If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
-keybinds {
+keybinds clear-defaults=true {
     normal {
-        // uncomment this and adjust key if using copy_on_select=false
-        // bind "Alt c" { Copy; }
+        bind "p" { SwitchToMode "Pane"; }
+        bind "n" { SwitchToMode "Resize"; }
+        bind "s" { SwitchToMode "Scroll"; }
+        bind "o" { SwitchToMode "Session"; }
+        bind "t" { SwitchToMode "Tab"; }
+        bind "h" { SwitchToMode "Move"; }
+        bind "b" { SwitchToMode "Tmux"; }
+        bind "Esc" "Enter" { SwitchToMode "Locked"; }
     }
     locked {
         bind "Ctrl g" { SwitchToMode "Normal"; }
     }
     resize {
-        bind "Ctrl n" { SwitchToMode "Normal"; }
+        bind "Esc" { SwitchToMode "Normal"; }
         bind "h" "Left" { Resize "Increase Left"; }
         bind "j" "Down" { Resize "Increase Down"; }
         bind "k" "Up" { Resize "Increase Up"; }
@@ -21,7 +26,7 @@ keybinds {
         bind "-" { Resize "Decrease"; }
     }
     pane {
-        bind "Ctrl p" { SwitchToMode "Normal"; }
+        bind "Esc" { SwitchToMode "Normal"; }
         bind "h" "Left" { MoveFocus "Left"; }
         bind "l" "Right" { MoveFocus "Right"; }
         bind "j" "Down" { MoveFocus "Down"; }
@@ -40,7 +45,7 @@ keybinds {
         bind "i" { TogglePanePinned; SwitchToMode "Normal"; }
     }
     move {
-        bind "Ctrl h" { SwitchToMode "Normal"; }
+        bind "Esc" { SwitchToMode "Normal"; }
         bind "n" "Tab" { MovePane; }
         bind "p" { MovePaneBackwards; }
         bind "h" "Left" { MovePane "Left"; }
@@ -49,7 +54,7 @@ keybinds {
         bind "l" "Right" { MovePane "Right"; }
     }
     tab {
-        bind "Ctrl t" { SwitchToMode "Normal"; }
+        bind "Esc" { SwitchToMode "Normal"; }
         bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
         bind "h" "Left" "Up" "k" { GoToPreviousTab; }
         bind "l" "Right" "Down" "j" { GoToNextTab; }
@@ -71,7 +76,7 @@ keybinds {
         bind "Tab" { ToggleTab; }
     }
     scroll {
-        bind "Ctrl s" { SwitchToMode "Normal"; }
+        bind "Esc" { SwitchToMode "Normal"; }
         bind "e" { EditScrollback; SwitchToMode "Normal"; }
         bind "s" { SwitchToMode "EnterSearch"; SearchInput 0; }
         bind "Ctrl c" { ScrollToBottom; SwitchToMode "Normal"; }
@@ -81,11 +86,9 @@ keybinds {
         bind "Ctrl b" "PageUp" "Left" "h" { PageScrollUp; }
         bind "d" { HalfPageScrollDown; }
         bind "u" { HalfPageScrollUp; }
-        // uncomment this and adjust key if using copy_on_select=false
-        // bind "Alt c" { Copy; }
     }
     search {
-        bind "Ctrl s" { SwitchToMode "Normal"; }
+        bind "Esc" { SwitchToMode "Normal"; }
         bind "Ctrl c" { ScrollToBottom; SwitchToMode "Normal"; }
         bind "j" "Down" { ScrollDown; }
         bind "k" "Up" { ScrollUp; }
@@ -100,19 +103,17 @@ keybinds {
         bind "o" { SearchToggleOption "WholeWord"; }
     }
     entersearch {
-        bind "Ctrl c" "Esc" { SwitchToMode "Scroll"; }
+        bind "Esc" { SwitchToMode "Scroll"; }
         bind "Enter" { SwitchToMode "Search"; }
     }
     renametab {
-        bind "Ctrl c" { SwitchToMode "Normal"; }
         bind "Esc" { UndoRenameTab; SwitchToMode "Tab"; }
     }
     renamepane {
-        bind "Ctrl c" { SwitchToMode "Normal"; }
         bind "Esc" { UndoRenamePane; SwitchToMode "Pane"; }
     }
     session {
-        bind "Ctrl o" { SwitchToMode "Normal"; }
+        bind "Esc" { SwitchToMode "Normal"; }
         bind "Ctrl s" { SwitchToMode "Scroll"; }
         bind "d" { Detach; }
         bind "w" {
@@ -202,27 +203,6 @@ keybinds {
     shared_except "normal" "locked" {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
     }
-    shared_except "pane" "locked" {
-        bind "Ctrl p" { SwitchToMode "Pane"; }
-    }
-    shared_except "resize" "locked" {
-        bind "Ctrl n" { SwitchToMode "Resize"; }
-    }
-    shared_except "scroll" "locked" {
-        bind "Ctrl s" { SwitchToMode "Scroll"; }
-    }
-    shared_except "session" "locked" {
-        bind "Ctrl o" { SwitchToMode "Session"; }
-    }
-    shared_except "tab" "locked" {
-        bind "Ctrl t" { SwitchToMode "Tab"; }
-    }
-    shared_except "move" "locked" {
-        bind "Ctrl h" { SwitchToMode "Move"; }
-    }
-    shared_except "tmux" "locked" {
-        bind "Ctrl b" { SwitchToMode "Tmux"; }
-    }
 }
 
 // Plugin aliases - can be used to change the implementation of Zellij
@@ -270,7 +250,7 @@ on_force_close "quit"
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
 //
-default_shell "nu"
+default_shell "/usr/local/bin/nu"
 
 // Choose the path to override cwd that zellij will use for opening new panes
 //
@@ -538,7 +518,6 @@ default_mode "locked"
 // typically work best. Set to 0 to use the number of (physical) CPU cores.
 // NOTE: This only applies to web clients at the moment."#;
 // client_async_worker_tasks 4
-
 
 web_client {
     font "monospace"
