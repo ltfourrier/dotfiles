@@ -25,5 +25,3 @@ $env.PATH = ($env.PATH
   | prepend "/usr/local/bin"
   | prepend "/usr/local/sbin"
   | append "/Users/laurent.fourrier/.local/bin")
-
-source "~/.cargo/env.nu"

@@ -17,3 +17,6 @@
 # options using:
 #     config nu --doc | nu-highlight | less -R
 
+source catppuccin_mocha.nu
+
+source "~/.cargo/env.nu"
