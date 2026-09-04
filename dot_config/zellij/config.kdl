@@ -257,7 +257,7 @@ on_force_close "quit"
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
 //
-default_shell "/usr/local/bin/nu"
+default_shell "/opt/homebrew/bin/nu"
 
 // Choose the path to override cwd that zellij will use for opening new panes
 //
@@ -525,6 +525,9 @@ default_mode "locked"
 // typically work best. Set to 0 to use the number of (physical) CPU cores.
 // NOTE: This only applies to web clients at the moment."#;
 // client_async_worker_tasks 4
+
+// Scroll mode sync makes the mouse wheel activate search (which I dislike)
+scroll_mode_sync false
 
 web_client {
     font "monospace"

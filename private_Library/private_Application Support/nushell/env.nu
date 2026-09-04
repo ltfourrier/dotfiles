@@ -17,11 +17,18 @@
 # You can remove these comments if you want or leave
 # them for future reference.
 
-$env.EDITOR = 'hx'
+$env.config.max_last_result_size = 10Mb
 
-$env.PATH = ($env.PATH
-  | prepend "/usr/local/opt/ruby/bin"
-  | prepend "/usr/local/lib/ruby/gems/3.1.0/bin"
-  | prepend "/usr/local/bin"
-  | prepend "/usr/local/sbin"
-  | append "/Users/laurent.fourrier/.local/bin")
+$env.EDITOR = 'hlc'
+
+$env.PATH = ($env.PATH | split row (char esep) | prepend [
+  $'($env.HOME)/.local/bin',
+  '/opt/homebrew/bin',
+  '/opt/homebrew/sbin',
+  '/usr/local/bin',
+  '/usr/local/sbin',
+  '/bin',
+  '/sbin'
+] | append [
+  # Less priority path values here.
+])

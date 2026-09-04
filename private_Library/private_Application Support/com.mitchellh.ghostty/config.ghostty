@@ -9,7 +9,7 @@ background-blur = false
 window-vsync = true
 
 # ZelliJ by default!
-command = /usr/local/bin/zellij
+command = /opt/homebrew/bin/zellij
 
 # Fix alt/option key
 macos-option-as-alt = left
